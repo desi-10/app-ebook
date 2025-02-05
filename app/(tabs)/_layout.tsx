@@ -1,43 +1,43 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
+import { colorScheme } from "nativewind";
+import React from "react";
+import { useColorScheme } from "react-native";
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
+export default function TabsLayout() {
   const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+    <Tabs>
       <Tabs.Screen
-        name="index"
+        name="(home)"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          headerShown: false,
+          title: "Home",
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Ionicons
+                name={focused ? "home" : "home-outline"}
+                size={24}
+                color={colorScheme === "dark" ? "white" : "black"}
+              />
+            );
+          },
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="profile"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          headerShown: false,
+          title: "Profile",
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Ionicons
+                name={focused ? "person-circle" : "person-circle-outline"}
+                size={24}
+                color={colorScheme === "dark" ? "white" : "black"}
+              />
+            );
+          },
         }}
       />
     </Tabs>
