@@ -10,6 +10,7 @@ import {
 import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { IconSymbol } from "@/components/ui/IconSymbol";
+import { router } from "expo-router";
 
 const BookDetails = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -73,11 +74,14 @@ const BookDetails = () => {
 
         {/* Buttons */}
         <View className="flex-row justify-between mt-5">
-          <TouchableOpacity className="bg-purple-600 px-4 py-3 rounded-lg flex-1 mr-2">
+          <Pressable
+            onPress={() => router.push("/(tabs)/(home)/(book)/reader-screen")}
+            className="bg-purple-600 px-4 py-3 rounded-lg flex-1 mr-2"
+          >
             <Text className="text-white text-center font-bold">
               📖 Read now
             </Text>
-          </TouchableOpacity>
+          </Pressable>
 
           <TouchableOpacity className="bg-gray-700 px-4 py-3 rounded-lg flex-1 ml-2">
             <Text className="text-white text-center font-bold">⭐ Reviews</Text>

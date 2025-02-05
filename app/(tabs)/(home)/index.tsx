@@ -164,15 +164,13 @@ const IndexPage = () => {
                 })
               }
             >
-              <View className="px-4 bg-red-500 w-full flex flex-row justify-between p-5 rounded-lg">
+              <View className="px-4 bg-purple-600 w-full flex flex-row justify-between p-5 rounded-lg">
                 <View className="flex justify-between ">
                   <View>
                     <Text className="text-2xl font-bold text-white">
                       Continue Reading
                     </Text>
-                    <Text className="text-lg text-white">
-                      The New York Times
-                    </Text>
+                    <Text className="text-lg text-white">God's Word To Us</Text>
                   </View>
                   <View>
                     <Text className=" text-white mb-2">Page 1 of 3</Text>
@@ -202,7 +200,7 @@ const IndexPage = () => {
                   Categories
                 </Text>
                 <Link href="/(tabs)/(home)/(book)">
-                  <Text className="text-sm text-red-500 dark:text-white">
+                  <Text className="text-sm text-purple-600 dark:text-white">
                     See All
                   </Text>
                 </Link>
@@ -237,7 +235,7 @@ const IndexPage = () => {
                   Recommended
                 </Text>
                 <Link href="/(tabs)/(home)/(book)">
-                  <Text className="text-sm text-red-500 dark:text-white">
+                  <Text className="text-sm text-purple-600 dark:text-white">
                     See All
                   </Text>
                 </Link>
@@ -287,7 +285,7 @@ const IndexPage = () => {
                   Most Downloaded
                 </Text>
                 <Link href="/(tabs)/(home)/(book)">
-                  <Text className="text-sm text-red-500 dark:text-white">
+                  <Text className="text-sm text-purple-600 dark:text-white">
                     See All
                   </Text>
                 </Link>
